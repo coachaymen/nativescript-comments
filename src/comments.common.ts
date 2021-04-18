@@ -273,8 +273,9 @@ export class Common extends StackLayout {
     let imageholder = "";
     if (this.imagetag) imageholder = this.imagetag;
     else
+		//Resizing o
       imageholder =
-        '<Image  src="{{ image }}" class="comment-userimage img-circle" height="45" width="45" stretch="fill" />';
+        '<Image  src="{{ image }}" class="comment-userimage img-circle" stretch="fill"></Image>';
     let plugin = "";
     if (this.plugin) plugin = this.plugin;
     if (this.scroll === true)
@@ -306,17 +307,17 @@ export class Common extends StackLayout {
         ${imageholder}
         </StackLayout>
         <GridLayout row="0" col="1" rows="auto,auto,auto,auto">
-          <Label row="0" col="1" dataid="{{ id }}" tap="{{$parents['Repeater'].userNameAction,$parents['Repeater'].userNameAction}}" text="{{ username }}" class="comment-username" textWrap="true" />
-          <Label row="1" col="1" class="comment-text" text="{{ comment }}" textWrap="true" />
+          <Label row="0" col="1" dataid="{{ id }}" tap="{{$parents['Repeater'].userNameAction,$parents['Repeater'].userNameAction}}" text="{{ username }}" class="comment-username" textWrap="true"></Label>
+          <Label row="1" col="1" class="comment-text" text="{{ comment }}" textWrap="true"></Label>
           <StackLayout class="comment-action-bar" row="2" orientation="horizontal">
-            <Label text="{{ getlikeText(likes) }}"  dataid="{{ id }}"  tap="{{$parents['Repeater'].likeAction,$parents['Repeater'].likeAction}}" isLike="{{ isLike }}" likes="{{ likes }}"  class="{{ isLike ? 'comment-action like liked' : 'comment-action like'}}" textWrap="true" />
-            <Label  visibility="{{ replyTo  ? 'collapse' : 'visible'}}"  text="." class="comment-seprator" />
-            <Label visibility="{{ replyTo  ? 'collapse' : 'visible'}}"  dataid="{{ id }}" dataname="{{ username }}" text="{{$parents['Repeater'].replyText,$parents['Repeater'].replyText}}" tap="{{$parents['Repeater'].replyAction,$parents['Repeater'].replyAction}}" class="comment-action reply" textWrap="true" />
+            <Label text="{{ getlikeText(likes) }}"  dataid="{{ id }}"  tap="{{$parents['Repeater'].likeAction,$parents['Repeater'].likeAction}}" isLike="{{ isLike }}" likes="{{ likes }}"  class="{{ isLike ? 'comment-action like liked' : 'comment-action like'}}" textWrap="true"></Label>
+            <Label  visibility="{{ replyTo  ? 'collapse' : 'visible'}}"  text="." class="comment-seprator"></label>
+            <Label visibility="{{ replyTo  ? 'collapse' : 'visible'}}"  dataid="{{ id }}" dataname="{{ username }}" text="{{$parents['Repeater'].replyText,$parents['Repeater'].replyText}}" tap="{{$parents['Repeater'].replyAction,$parents['Repeater'].replyAction}}" class="comment-action reply" textWrap="true"></Label>
             <Label  id="{{ id }}" text="{{ ${
               commentsDateTo
-            }(datetime) }}" class="comment-details" textWrap="true" />
+            }(datetime) }}" class="comment-details" textWrap="true"></Label>
           </StackLayout>
-          <StackLayout row="3"  id="{{ scrolltome ? scrolltome : ''  }}" />
+          <StackLayout row="3"  id="{{ scrolltome ? scrolltome : ''  }}"></StackLayout>
          </GridLayout>
         </GridLayout>
         `;
@@ -329,14 +330,14 @@ export class Common extends StackLayout {
         ${imageholder}
         </StackLayout>
         <GridLayout row="0" col="1" rows="auto,auto,auto,auto">
-          <Label row="0" col="1" dataid="{{ id }}" tap="{{$parents['Repeater'].userNameAction,$parents['Repeater'].userNameAction}}" text="{{ username }}" class="comment-username" textWrap="true" />
-          <Label row="1" col="1" class="comment-text" text="{{ comment }}" textWrap="true" />
+          <Label row="0" col="1" dataid="{{ id }}" tap="{{$parents['Repeater'].userNameAction,$parents['Repeater'].userNameAction}}" text="{{ username }}" class="comment-username" textWrap="true"></Label>
+          <Label row="1" col="1" class="comment-text" text="{{ comment }}" textWrap="true"></Label>
           <StackLayout class="comment-action-bar" row="2" orientation="horizontal">
             <Label  id="{{ id }}" text="{{ ${
               commentsDateTo
-            }(datetime) }}" class="comment-details" textWrap="true" />
+            }(datetime) }}" class="comment-details" textWrap="true"></Label>
           </StackLayout>
-          <StackLayout row="3"  id="{{ scrolltome ? scrolltome : ''  }}" />
+          <StackLayout row="3"  id="{{ scrolltome ? scrolltome : ''  }}"></StackLayout>
          </GridLayout>
         </GridLayout>
         `;
